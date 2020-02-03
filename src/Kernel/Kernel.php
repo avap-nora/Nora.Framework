@@ -1,8 +1,8 @@
 <?php
 namespace Nora\Framework\Kernel;
 
-use Nora\Framework\DI\Configuration\AbstractConfigurator;
-use Nora\Framework\DI\InjectorInterface;
+use Nora\Architecture\DI\Configuration\AbstractConfigurator;
+use Nora\Architecture\DI\InjectorInterface;
 
 class Kernel implements KernelInterface
 {

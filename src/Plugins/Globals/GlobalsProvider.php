@@ -1,10 +1,10 @@
 <?php
 namespace Nora\Framework\Plugins\Globals;
 
-use Nora\Framework\DI\Dependency\ProviderInterface;
+use Nora\Architecture\DI\Dependency\ProviderInterface;
 use Nora\Utility\DotEnv\EnvLoader;
-use Nora\Framework\DI\Annotation\Named;
-use Nora\Framework\DI\Annotation\Inject;
+use Nora\Architecture\DI\Annotation\Named;
+use Nora\Architecture\DI\Annotation\Inject;
 use Nora\Utility\Globals\Globals;
 
 

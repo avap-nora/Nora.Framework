@@ -6,12 +6,6 @@ declare(strict_types=1);
 
 namespace Nora\Framework\Kernel;
 
-use Nora\Framework\DI\Annotation\Inject;
-use Nora\Framework\DI\Compiler\ScriptInjector;
-use Nora\Framework\DI\Configuration\AbstractConfigurator;
-use Nora\Framework\DI\Configuration\NullConfigurator;
-use Nora\Framework\DI\InjectorInterface;
-
 class KernelMeta
 {
     /**

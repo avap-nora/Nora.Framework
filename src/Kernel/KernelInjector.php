@@ -6,17 +6,17 @@ declare(strict_types=1);
 
 namespace Nora\Framework\Kernel;
 
-use Nora\Framework\AOP\Compiler\Compiler;
-use Nora\Framework\DI\Annotation\Inject;
-use Nora\Framework\DI\Bind;
-use Nora\Framework\DI\Compiler\ScriptInjector;
-use Nora\Framework\DI\Configuration\AbstractConfigurator;
-use Nora\Framework\DI\Configuration\NullConfigurator;
-use Nora\Framework\DI\Dependency\Dependency;
-use Nora\Framework\DI\Exception\Untargeted;
-use Nora\Framework\DI\Injector;
-use Nora\Framework\DI\InjectorInterface;
-use Nora\Framework\DI\ValueObject\Name;
+use Nora\Architecture\AOP\Compiler\Compiler;
+use Nora\Architecture\DI\Annotation\Inject;
+use Nora\Architecture\DI\Bind;
+use Nora\Architecture\DI\Compiler\ScriptInjector;
+use Nora\Architecture\DI\Configuration\AbstractConfigurator;
+use Nora\Architecture\DI\Configuration\NullConfigurator;
+use Nora\Architecture\DI\Dependency\Dependency;
+use Nora\Architecture\DI\Exception\Untargeted;
+use Nora\Architecture\DI\Injector;
+use Nora\Architecture\DI\InjectorInterface;
+use Nora\Architecture\DI\ValueObject\Name;
 use Nora\Framework\Kernel\Exception\InvalidContextException;
 use Nora\Utility\FileSystem\CreateWritableDirectory;
 

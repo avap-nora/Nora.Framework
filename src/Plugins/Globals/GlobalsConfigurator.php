@@ -1,7 +1,7 @@
 <?php
 namespace Nora\Framework\Plugins\Globals;
 
-use Nora\Framework\DI\Configuration\AbstractConfigurator;
+use Nora\Architecture\DI\Configuration\AbstractConfigurator;
 use Nora\Utility\DotEnv\EnvLoader;
 use Nora\Utility\Globals\Globals;
 

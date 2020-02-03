@@ -5,12 +5,12 @@ use Cache\Adapter\Common\AbstractCachePool;
 use Cache\Bridge\SimpleCache\SimpleCacheBridge;
 use Cache\Namespaced\NamespacedCachePool;
 use Cache\Prefixed\PrefixedCachePool;
-use Nora\Framework\DI\Annotation\Named;
-use Nora\Framework\DI\Dependency\ProviderInterface;
-use Nora\Framework\DI\Injector\InjectionPoint;
-use Nora\Framework\DI\Injector\InjectionPointInterface;
+use Nora\Architecture\DI\Annotation\Named;
+use Nora\Architecture\DI\Dependency\ProviderInterface;
+use Nora\Architecture\DI\Injector\InjectionPoint;
+use Nora\Architecture\DI\Injector\InjectionPointInterface;
+use Nora\Architecture\DI\Configuration\AbstractConfigurator;
 use Nora\Framework\Kernel\KernelMeta;
-use Nora\Framework\DI\Configuration\AbstractConfigurator;
 use ReflectionClass;
 
 class PhpCacheProvider implements ProviderInterface

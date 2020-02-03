@@ -1,6 +1,7 @@
 <?php
 namespace Nora\Framework\Plugins\Logger;
 
+use Nora\Architecture\DI\Annotation\Inject;
 use Nora\Framework\DI\Configuration\AbstractConfigurator;
 use Nora\Framework\DI\InjectorInterface;
 use Psr\Log\LoggerInterface;
@@ -10,7 +11,7 @@ trait LoggerTrait
     private $logger;
 
     /**
-     * @Nora\Framework\DI\Annotation\Inject
+     * @Inject
      */
     final public function setLogger(LoggerInterface $logger)
     {

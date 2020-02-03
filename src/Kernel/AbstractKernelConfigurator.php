@@ -1,7 +1,7 @@
 <?php
 namespace Nora\Framework\Kernel;
 
-use Nora\Framework\DI\Configuration\AbstractConfigurator;
+use Nora\Architecture\DI\Configuration\AbstractConfigurator;
 
 abstract class AbstractKernelConfigurator extends AbstractConfigurator
 {

@@ -1,7 +1,7 @@
 <?php
 namespace Nora\Framework\Builtin;
 
-use Nora\Framework\DI\InjectorInterface;
+use Nora\Architecture\DI\InjectorInterface;
 use Nora\Framework\Kernel\Context\AppContext;
 use Nora\Framework\Kernel\KernelInjector;
 use Nora\Framework\Bootstrap;

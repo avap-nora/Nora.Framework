@@ -2,13 +2,13 @@
 namespace Nora\Framework\Plugins\Logger\Provider;
 
 use Monolog\Logger;
-use Nora\Framework\DI\Annotation\Named;
-use Nora\Framework\DI\Dependency\ProviderInterface;
-use Nora\Framework\DI\Injector\InjectionPoint;
-use Nora\Framework\DI\Injector\InjectionPointInterface;
+use Nora\Architecture\DI\Annotation\Named;
+use Nora\Architecture\DI\Dependency\ProviderInterface;
+use Nora\Architecture\DI\Injector\InjectionPoint;
+use Nora\Architecture\DI\Injector\InjectionPointInterface;
 use Nora\Framework\Kernel\KernelMeta;
 use Psr\Log\LoggerInterface;
-use Nora\Framework\DI\Configuration\AbstractConfigurator;
+use Nora\Architecture\DI\Configuration\AbstractConfigurator;
 use ReflectionClass;
 
 class MonologLoggerProvider implements ProviderInterface
