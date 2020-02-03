@@ -10,7 +10,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Nora\\Framework\\": "src/"
+            "Nora\\Framework\\": "src/",
+            "NoraFake\\": "tests/lib/NoraFake"
         }
     },
     "scripts": {
