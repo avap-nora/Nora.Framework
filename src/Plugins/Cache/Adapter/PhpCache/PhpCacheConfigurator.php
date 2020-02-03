@@ -1,5 +1,5 @@
 <?php
-namespace Nora\Framework\Adapter\Cache\PhpCache;
+namespace Nora\Framework\Plugins\Cache\Adapter\PhpCache;
 
 use Nora\Framework\Kernel\AbstractKernelConfigurator;
 use Psr\SimpleCache\CacheInterface;
@@ -9,8 +9,8 @@ class PhpCacheConfigurator extends AbstractKernelConfigurator
     public function configure()
     {
         $this->bind(CacheInterface::class)
-             ->toProvider(
-                 PhpCacheProvider::class
-             );
+            ->toProvider(
+                PhpCacheProvider::class
+            );
     }
 }

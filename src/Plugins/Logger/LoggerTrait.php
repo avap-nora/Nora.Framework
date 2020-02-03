@@ -1,5 +1,5 @@
 <?php
-namespace Nora\Framework\Kernel\Provide\Logger;
+namespace Nora\Framework\Plugins\Logger;
 
 use Nora\Framework\DI\Configuration\AbstractConfigurator;
 use Nora\Framework\DI\InjectorInterface;

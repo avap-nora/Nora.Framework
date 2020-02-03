@@ -1,5 +1,5 @@
 <?php
-namespace Nora\Framework\Adapter\Logger\Monolog;
+namespace Nora\Framework\Plugins\Logger\Provider;
 
 use Monolog\Logger;
 use Nora\Framework\DI\Annotation\Named;

@@ -1,5 +1,5 @@
 <?php
-namespace Nora\Framework\Adapter\Cache\PhpCache;
+namespace Nora\Framework\Plugins\Cache\Adapter\PhpCache;
 
 use Cache\Adapter\Common\AbstractCachePool;
 use Cache\Bridge\SimpleCache\SimpleCacheBridge;

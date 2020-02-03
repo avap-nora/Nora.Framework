@@ -52,7 +52,19 @@
         "phpdox": "Create phpdox"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^8.5",
+        "cache/cache": "^1.0",
+        "monolog/monolog": "^2.0"
     },
-    "license": "proprietary"
+    "license": "proprietary",
+    "require": {
+        "doctrine/common": "^2.12",
+        "nora/business": "dev-master",
+        "nora/utility": "dev-master",
+        "nikic/php-parser": "^4.3"
+    },
+    "repositories": [
+        { "type": "vcs", "url": "https://avap.codes/nora/lib/Nora.Business.git" },
+        { "type": "vcs", "url": "https://avap.codes/nora/lib/Nora.Utility.git" }
+    ]
 }

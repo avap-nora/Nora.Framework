@@ -6,7 +6,6 @@ declare(strict_types=1);
 
 namespace Nora\Framework\Kernel;
 
-use NoraFake\FakeComponent;
 use Nora\Framework\AOP\Compiler\Compiler;
 use Nora\Framework\DI\Annotation\Inject;
 use Nora\Framework\DI\Bind;
@@ -19,7 +18,7 @@ use Nora\Framework\DI\Injector;
 use Nora\Framework\DI\InjectorInterface;
 use Nora\Framework\DI\ValueObject\Name;
 use Nora\Framework\Kernel\Exception\InvalidContextException;
-use Nora\System\FileSystem\CreateWritableDirectory;
+use Nora\Utility\FileSystem\CreateWritableDirectory;
 
 class KernelInjector implements InjectorInterface
 {

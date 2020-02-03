@@ -1,39 +1,37 @@
 <?php
 namespace NoraFake\Kernel\Context;
 
-use Cache\Adapter\Apc\ApcCachePool;
-use Cache\Adapter\Apcu\ApcuCachePool;
 use Cache\Adapter\Common\AbstractCachePool;
-use Cache\Adapter\PHPArray\ArrayCachePool;
 use Cache\Adapter\Redis\RedisCachePool;
-use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\SlackHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
-use NoraFake\FakeComponent;
-use Nora\Framework\Adapter\Cache\PhpCache\PhpCacheProvider;
-use Nora\Framework\Adapter\Misc\Elasticsearch\ElasticsearchConfigurator;
-use Nora\Framework\Adapter\Misc\GoogleClient\GoogleClientConfigurator;
-use Nora\Framework\DI\Configuration\AbstractConfigurator;
 use Nora\Framework\Kernel\AbstractKernelConfigurator;
-use Nora\Framework\Kernel\Provide\Vars\DotEnv\EnvLoader;
-use Psr\Cache\CacheItemPoolInterface;
+use Nora\Utility\DotEnv\EnvLoader;
 use Redis;
+
+// use Cache\Adapter\Apc\ApcCachePool;
+// use Cache\Adapter\Apcu\ApcuCachePool;
+// use Cache\Adapter\Common\AbstractCachePool;
+// use Cache\Adapter\PHPArray\ArrayCachePool;
+// use Cache\Adapter\Redis\RedisCachePool;
+// use Monolog\Formatter\LineFormatter;
+// use Monolog\Handler\SlackHandler;
+// use Monolog\Handler\StreamHandler;
+// use Monolog\Logger;
+// use NoraFake\FakeComponent;
+// use Nora\Framework\Adapter\Cache\PhpCache\PhpCacheProvider;
+// use Nora\Framework\Adapter\Misc\Elasticsearch\ElasticsearchConfigurator;
+// use Nora\Framework\Adapter\Misc\GoogleClient\GoogleClientConfigurator;
+// use Nora\Framework\DI\Configuration\AbstractConfigurator;
+// use Nora\Framework\Kernel\AbstractKernelConfigurator;
+// use Nora\Framework\Kernel\Provide\Vars\DotEnv\EnvLoader;
+// use Psr\Cache\CacheItemPoolInterface;
 
 class TestConfigurator extends AbstractKernelConfigurator
 {
     public function configure()
     {
-        $this->bind(FakeComponent::class);
-
-        // 環境変数処理
-        // ---------------------------------------
-        $this
-            ->bind(EnvLoader::class)
-            ->toInstance(
-                (new EnvLoader($this->meta->directory))->override()
-            );
-
         // キャッシュ
         // ---------------------------------------
         $this
@@ -83,26 +81,28 @@ class TestConfigurator extends AbstractKernelConfigurator
         // }}}
 
         $this->bind()
-             ->annotatedWith('logger_config')
-             ->toInstance([
+            ->annotatedWith('logger_config')
+            ->toInstance(
+                [
                  'handlers' => [
                      $appHandler,
                      $debugHandler,
                      $slackHandler
                  ]
-             ]);
+                ]
+            );
 
-        // Elastic設定
-        // ---------------------------------------
-        $this->install(new ElasticsearchConfigurator());
-        $this->bind()
-             ->annotatedWith('elasticsearch_hosts')
-             ->toInstance(['localhost:9200']);
-        // Google設定
-        // ---------------------------------------
-        $this->install(new GoogleClientConfigurator());
-        $this->bind()
-             ->annotatedWith('google_auth_config')
-             ->toInstance($this->meta->directory.'/var/google-credentials.json');
+        // // Elastic設定
+        // // ---------------------------------------
+        // $this->install(new ElasticsearchConfigurator());
+        // $this->bind()
+        //     ->annotatedWith('elasticsearch_hosts')
+        //     ->toInstance(['localhost:9200']);
+        // // Google設定
+        // // ---------------------------------------
+        // $this->install(new GoogleClientConfigurator());
+        // $this->bind()
+        //     ->annotatedWith('google_auth_config')
+        //     ->toInstance($this->meta->directory.'/var/google-credentials.json');
     }
 }

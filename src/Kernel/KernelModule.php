@@ -24,5 +24,9 @@ class KernelModule extends AbstractConfigurator
             ->bind()
             ->annotatedWith(KernelName::class)
             ->toInstance($this->meta->name);
+        $this
+            ->bind()
+            ->annotatedWith("project_root")
+            ->toInstance($this->meta->directory);
     }
 }

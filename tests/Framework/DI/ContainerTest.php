@@ -40,7 +40,6 @@ class ContainerTest extends TestCase
     {
         $this->container = new Container();
         $this->assertInstanceOf(ContainerInterface::class, $this->container);
-
         return $this->container;
     }
 
@@ -205,9 +204,11 @@ class ContainerTest extends TestCase
             );
         (new Bind($container, ''))
             ->annotatedWith('data')
-            ->toInstance([
+            ->toInstance(
+                [
                 'name' => 'hajime'
-            ]);
+                ]
+            );
         (new Bind($container, FakeTraceClient::class));
         $container->addPointcut($pointcut);
         $fake = $container(FakeTraceClient::class);
@@ -252,36 +253,6 @@ class ContainerTest extends TestCase
         }
         $this->assertEquals('-data => (array)', $logs[1]);
         $container->weaveAspects($spy);
-    }
-
-    /**
-     * @test
-     */
-    public function コンフィギュレーション()
-    {
-        $configurator = new FakeConfigurator();
-        $injector = unserialize(
-            serialize(
-                new Injector($configurator)
-            )
-        );
-        $comp = $injector->getInstance(FakeTraceClient::class);
-        $this->assertEquals('(trace) aaa hajime bbb', $comp->intercepted());
-    }
-
-    /**
-     * @test
-     */
-    public function コンフィギュレーションネスト()
-    {
-        $configurator = new FakeMainConfigurator();
-        $injector = unserialize(
-            serialize(
-                new Injector($configurator)
-            )
-        );
-        $comp = $injector->getInstance(FakeTraceClient::class);
-        $this->assertEquals('(trace) aaa kurari bbb', $comp->intercepted());
     }
 
     /**
