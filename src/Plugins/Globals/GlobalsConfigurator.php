@@ -9,14 +9,6 @@ class GlobalsConfigurator extends AbstractConfigurator
 {
     public function configure()
     {
-        // Envローダを関連づける
-        $this
-            ->bind(EnvLoader::class)
-            ->toConstructor(
-                EnvLoader::class,
-                'root=project_root'
-            );
-
         // グローバル変数をキャプチャする
         $this
             ->bind()

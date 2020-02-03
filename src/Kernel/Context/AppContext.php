@@ -10,9 +10,9 @@ class AppContext extends AbstractKernelConfigurator
 {
     public function configure()
     {
-        $this->install(new GlobalsConfigurator());
-        $this->install(new MonologConfigurator($this->meta));
-        $this->install(new PhpCacheConfigurator($this->meta));
+        // $this->install(new GlobalsConfigurator());
+        // $this->install(new MonologConfigurator($this->meta));
+        // $this->install(new PhpCacheConfigurator($this->meta));
         // $this->install(new GuzzleHttpConfigurator());
     }
 }

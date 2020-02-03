@@ -1,5 +1,5 @@
 {
-    "name": "nora/framework",
+    "name": "avap/nora-php-framework",
     "description": "",
     "type": "project",
     "authors": [
@@ -59,14 +59,10 @@
     "license": "proprietary",
     "require": {
         "doctrine/common": "^2.12",
-        "nora/business": "dev-master",
-        "nora/architecture": "dev-master",
-        "nora/utility": "dev-master",
+        "avap/nora-php-business": "dev-master",
+        "avap/nora-php-architecture": "dev-master",
+        "avap/nora-php-utility": "dev-master",
+        "avap/nora-php-logging": "dev-master",
         "nikic/php-parser": "^4.3"
-    },
-    "repositories": [
-        { "type": "vcs", "url": "https://avap.codes/nora/lib/Nora.Business.git" },
-        { "type": "vcs", "url": "https://avap.codes/nora/lib/Nora.Utility.git" },
-        { "type": "vcs", "url": "https://avap.codes/nora/lib/Nora.Architecture.git" }
-    ]
+    }
 }

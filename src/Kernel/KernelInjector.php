@@ -9,7 +9,6 @@ namespace Nora\Framework\Kernel;
 use Nora\Architecture\AOP\Compiler\Compiler;
 use Nora\Architecture\DI\Annotation\Inject;
 use Nora\Architecture\DI\Bind;
-use Nora\Architecture\DI\Compiler\ScriptInjector;
 use Nora\Architecture\DI\Configuration\AbstractConfigurator;
 use Nora\Architecture\DI\Configuration\NullConfigurator;
 use Nora\Architecture\DI\Dependency\Dependency;
@@ -27,10 +26,6 @@ class KernelInjector implements InjectorInterface
      */
     private $scriptDir;
 
-    /**
-     * @var InjectorInterface
-     */
-    private $injector;
 
     /**
      * @var Configurator
@@ -55,10 +50,6 @@ class KernelInjector implements InjectorInterface
         $this->meta = $meta;
         $this->scriptDir = $meta->tmpDir . '/di';
         $this->classDir = (new CreateWritableDirectory)($meta->tmpDir . '/class');
-        // $this->injector = new ScriptInjector($this->scriptDir, function () {
-        //     return $this->getConfigurator();
-        // });
-        // $this->injector = new Injector($this->getConfigurator());
         $this->container = $this->getConfigurator()->getContainer();
         $this->container->weaveAspects(new Compiler($this->classDir));
     }
@@ -79,9 +70,6 @@ class KernelInjector implements InjectorInterface
 
     private function bind(string $class)
     {
-        echo "\n";
-        vaR_Dump($class."TTTT");
-        // vaR_Dump(FakeComponent::class);
         (new Bind($this->container, $class));
         $this->container->getInstance($class, Name::ANY);
         // $bound = $this->container[$class . '-' . Name::ANY];

@@ -5,6 +5,7 @@ use Nora\Architecture\DI\Configuration\AbstractConfigurator;
 use Nora\Framework\Kernel\Annotation\KernelName;
 use Nora\Framework\Kernel\Annotation\ProjectRoot;
 use Nora\Framework\Kernel\Provide\Vars\DotEnv\EnvLoader;
+use Nora\Utility\DotEnv\EnvLoader;
 
 class KernelModule extends AbstractConfigurator
 {
@@ -28,5 +29,9 @@ class KernelModule extends AbstractConfigurator
             ->bind()
             ->annotatedWith("project_root")
             ->toInstance($this->meta->directory);
+
+        // Envローダを関連づける
+        $envLoader = new EnvLoader($this->meta->directory);
+        $envLoader->override();
     }
 }
