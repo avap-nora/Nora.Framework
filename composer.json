@@ -59,10 +59,10 @@
     "license": "proprietary",
     "require": {
         "doctrine/common": "^2.12",
-        "avap/nora-php-business": "dev-master",
-        "avap/nora-php-architecture": "dev-master",
-        "avap/nora-php-utility": "dev-master",
-        "avap/nora-php-logging": "dev-master",
+        "avap/nora-php-business": "@dev",
+        "avap/nora-php-architecture": "@dev",
+        "avap/nora-php-utility": "@dev",
+        "avap/nora-php-logging": "@dev",
         "nikic/php-parser": "^4.3"
     }
 }
