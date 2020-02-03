@@ -6,6 +6,8 @@ declare(strict_types=1);
 
 namespace Nora\Framework\Kernel;
 
+use Nora\Utility\DotEnv\LoadDotEnvFile;
+
 class KernelMeta
 {
     /**
@@ -34,5 +36,7 @@ class KernelMeta
         $this->name = $name;
         $this->context = $context;
         $this->directory = $directory;
+
+        (new LoadDotEnvFile)($this->directory);
     }
 }
